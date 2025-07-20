@@ -1,0 +1,463 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0; /* remove browser default */
+  padding: 0; /* reset horizontal padding */
+  padding-top: 80px; /* space for fixed navbar */
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background-color: #F5F5DC; /* Beige background stays */
+  color: #4A2F0A;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+
+/* Generic Container Styles */
+.container,
+.auth-container,
+.dashboard-container,
+.account-page {
+  max-width: 1280px;
+  margin: 0 auto; /* ✅ Remove top margin (body handles spacing) */
+  padding: 24px;
+  background-color: #FFF8DC; /* Light beige content background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover,
+.auth-container:hover,
+.dashboard-container:hover,
+.account-page:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ✅ Navbar Styles */
+.navbar {
+  background: #FFF8DC; /* Beige background */
+  color: #4A2F0A; /* Dark brown text */
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: top 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo / Title */
+.navbar h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #8B4513; /* Brown logo text */
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Navigation Links */
+.navbar ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4A2F0A;
+  position: relative;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #8B4513;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #8B4513;
+}
+
+/* Stylish Logout Button */
+.navbar button {
+  background: #8B4513;
+  color: #FFF8DC;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar button:hover {
+  background: #6B3A0F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Generic Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #FFF8DC;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4A2F0A;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #D2B48C;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #F5F5DC;
+  color: #4A2F0A;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #8B4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4A2F0A;
+}
+
+/* Generic Button Styles */
+button,
+.btn-primary {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background-color: #8B4513;
+  color: #FFF8DC;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn-primary:hover {
+  background-color: #6B3A0F;
+  transform: translateY(-1px);
+}
+
+/* Error and Success Messages */
+.error {
+  color: #A52A2A;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: #FFF8DC;
+  border-radius: 6px;
+}
+
+.success {
+  color: #228B22;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: #FFF8DC;
+  border-radius: 6px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: #D2B48C;
+  border-radius: 6px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: #8B4513;
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* Dashboard Sections */
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.section {
+  background-color: #FFF8DC;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+}
+
+.section h3 {
+  font-size: 20px;
+  color: #4A2F0A;
+  margin-bottom: 12px;
+}
+
+.section ul {
+  padding-left: 24px;
+  font-size: 15px;
+  color: #4A2F0A;
+}
+
+/* Account Page Specific Styles */
+.account-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F5F5DC;
+}
+
+.header {
+  background-color: #8B4513;
+  color: #FFF8DC;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #6B3A0F;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.account-container {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  background-color: #A0522D;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF8DC;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid #6B3A0F;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 600px;
+  background-color: #FFF8DC;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #D2B48C;
+}
+
+.auth-options {
+  text-align: center;
+}
+
+.auth-options button {
+  margin: 0.5rem;
+}
+
+.profile-info {
+  margin-bottom: 2rem;
+  color: #4A2F0A;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container,
+  .auth-container,
+  .dashboard-container,
+  .account-container {
+    flex-direction: column;
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    gap: 20px;
+    padding: 12px 16px;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .auth-form {
+    padding: 16px;
+  }
+
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  button,
+  .btn-primary {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+/* Big logout at bottom of Account page */
+.account-logout {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.account-logout button {
+  display: inline-block;
+  min-width: 240px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  background: #8B4513;    /* Brown */
+  color: #FFF8DC;         /* Beige text */
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+
+.account-logout button:hover {
+  background: #6B3A0F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+}
+/* Add spacing for fixed navbar */
+.account-page {
+  padding-top: 100px; /* 80px navbar height + 20px extra */
+}
+.account-page {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Apply padding to all main pages so content isn't hidden under the fixed navbar */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-page,
+.dashboard,
+.journal,
+.goals,   
+.signup,
+.account-page {
+  padding-top: 100px; /* Navbar height (80px) + 20px extra spacing */
+}
+.auth-container {
+  padding-top: 120px; /* Adds space below navbar */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #f9f1e7; /* Beige background to match theme */
+}
+
+.auth-container .container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
