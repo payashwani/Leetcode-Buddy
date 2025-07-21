@@ -3,7 +3,7 @@ import axios from 'axios';
 import MoodChart from '../components/MoodChart';
 import '../styles/journal.css';
 
-axios.defaults.baseURL = 'https://leetcode-buddy-iota.vercel.app';
+axios.defaults.baseURL = 'https://leetcode-buddy.onrender.com';
 
 const generateSlug = (problem) => {
   return problem

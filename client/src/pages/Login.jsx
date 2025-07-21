@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../styles/global.css';
 
 // Configure Axios base URL
-axios.defaults.baseURL = 'https://leetcode-buddy-iota.vercel.app';
+axios.defaults.baseURL = 'https://leetcode-buddy.onrender.com';
 
 function Login() {
   const [email, setEmail] = useState('');
