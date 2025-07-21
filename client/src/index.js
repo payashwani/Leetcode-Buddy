@@ -6,7 +6,11 @@ import './styles/global.css';
 import axios from 'axios'; // ✅ Import Axios
 
 // ✅ Set default Axios base URL for all requests
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 
+  process.env.NODE_ENV === 'production'
+    ? 'https://leetcode-buddy-q2xs97h06-payashwani-chaturvedis-projects.vercel.app'
+    : 'http://localhost:5000';
+
 axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
