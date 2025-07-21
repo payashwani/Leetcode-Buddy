@@ -6,10 +6,8 @@ import './styles/global.css';
 import axios from 'axios'; // ✅ Import Axios
 
 // ✅ Set default Axios base URL for all requests
-axios.defaults.baseURL = 
-  process.env.NODE_ENV === 'production'
-    ? 'https://leetcode-buddy-q2xs97h06-payashwani-chaturvedis-projects.vercel.app'
-    : 'http://localhost:5000';
+axios.defaults.baseURL = 'https://leetcode-buddy.onrender.com';
+
 
 axios.defaults.withCredentials = true;
 
