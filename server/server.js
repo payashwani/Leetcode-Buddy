@@ -15,9 +15,10 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ['https://leetcode-buddy-one.vercel.app'],
+  origin: ['https://leetcode-buddy-iota.vercel.app'],
   credentials: true
 }));
+
 
 app.use(express.json());
 
