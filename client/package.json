@@ -2,7 +2,7 @@
   "name": "leetcode-buddy-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "https://leetcode-buddy.onrender.com",
   "dependencies": {
     "axios": "^1.7.2",
     "chart.js": "^4.4.9",
