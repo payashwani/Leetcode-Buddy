@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const problemRoutes = require('./routes/problemRoutes');
 const goalRoutes = require('./routes/goalRoutes');
 const leetcodeRoutes = require('./routes/leetcodeRoutes');
-const userRoutes = require('./routes/userRoutes');
+
 const jwt = require('jsonwebtoken');
 const Todo = require('./models/Todo'); // Import Todo model
 
@@ -36,7 +36,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/problems', problemRoutes);
 app.use('/api/goals', goalRoutes);
 app.use('/api/leetcode', leetcodeRoutes);
-app.use('/api/users', userRoutes);
+
 
 // To-Do List endpoints
 app.get('/api/todos', async (req, res) => {
