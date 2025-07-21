@@ -8,7 +8,6 @@ import axios from 'axios'; // ✅ Import Axios
 // ✅ Set default Axios base URL for all requests
 axios.defaults.baseURL = 'https://leetcode-buddy-iota.vercel.app';
 
-
 axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
